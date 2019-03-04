@@ -23,7 +23,11 @@
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script>
             $(function () {
-                var socket = io(`http://72Alleghany.ddns.net:8081`);
+                const socket = io(
+                    `http://72Alleghany.ddns.net:8081`,
+	                {
+	                    transports: ['websocket']
+	                });
                 $('form').submit(function(){
                     socket.emit('chat message', $('#m').val());
                     $('#m').val('');
