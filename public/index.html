@@ -24,8 +24,9 @@
 		<script>
             $(function () {
                 const socket = io(
-                    `http://72Alleghany.ddns.net:8081`,
+                    `https://72Alleghany.ddns.net:8081`,
 	                {
+	                    secure: true,
 	                    transports: ['websocket']
 	                });
                 $('form').submit(function(){
